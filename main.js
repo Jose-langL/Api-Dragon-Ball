@@ -11,6 +11,7 @@ Info();
 
 function filtrarPersonaje(array){
     array.forEach(personaje => {
-        console.log(personaje.name);        
+    console.log(personaje.name);        
     });
 }
+
