@@ -14,9 +14,9 @@ function filtrarPersonaje(array){
     array.forEach(personaje => {
         contenidoPersonaje.innerHTML +=`
         <div class="CardPersonaje">
-             <h2>${personaje.name}</h2>
-             <img src="${personaje.image}" width="150px">
-             <p>${personaje.race}</p>
+             <h2 class="NombrePersonaje">${personaje.name}</h2>
+             <img src="${personaje.image}">
+             <p class="InformacionPersonaje">${personaje.race}</p>
         </div>`
     });
 }
