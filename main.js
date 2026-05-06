@@ -1,4 +1,4 @@
-const URL = "https://dragonball-api.com/api/characters";
+const URL = "https://dragonball-api.com/api/characters?limit=100";
 
 async function Info() {
     const resultado = await fetch(URL)
@@ -13,7 +13,7 @@ function filtrarPersonaje(array){
     const contenidoPersonaje = document.getElementById("TarjetaPersonaje")
     array.forEach(personaje => {
         contenidoPersonaje.innerHTML +=`
-        <div class="CardPersonaje">
+        <div class="CardPersonaje" id="CardPersonaje-${personaje.id}">
              <h2 class="NombrePersonaje">${personaje.name}</h2>
              <img src="${personaje.image}">
              <p class="InformacionPersonaje">${personaje.race}</p>
