@@ -1,5 +1,7 @@
 const URL = "https://dragonball-api.com/api/characters?limit=15";
 
+const Personajes = []
+
 async function Info() {
     try {
         const resultado = await fetch(URL);
@@ -7,19 +9,24 @@ async function Info() {
             throw new Error("no se encontro api");
         }
         const data = await resultado.json()
-        filtrarPersonaje(data.items)
-        buscar(data.items);
-        console.log(data.items)
+
+        Personajes.push(...data.items)
+
+        filtrarPersonaje(Personajes)
+
+        buscar(Personajes[0])
+
     } catch (error) {
         console.error("ocurrio un error:", error.menssage);
     }
 }
+Info()
 
-Info();
 
-function filtrarPersonaje(array) {
+
+function filtrarPersonaje(datos) {
     const contenidoPersonaje = document.getElementById("TarjetaPersonaje")
-    array.forEach(personaje => {
+    datos.forEach(personaje => {
         contenidoPersonaje.innerHTML += `
         <div class="CardPersonaje" id="CardPersonaje-${personaje.id}">
                 <h2 class="NombrePersonaje">${personaje.name}</h2>
@@ -29,3 +36,6 @@ function filtrarPersonaje(array) {
     });
 }
 
+function buscar(data) {
+    console.log(data.name)
+}
