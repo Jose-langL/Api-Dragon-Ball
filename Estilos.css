@@ -92,6 +92,8 @@ body{
     height: 100%;
     margin: 10px;
     background-color: rgb(129, 139, 136);
+    position: relative;
+    overflow: hidden;
 }
 
 .CardPersonaje img{
@@ -100,6 +102,5 @@ body{
     object-fit: contain; 
 }
 
-#CardPersonaje-1{
-    background: rgb(202, 146, 146);
-}
+
+
