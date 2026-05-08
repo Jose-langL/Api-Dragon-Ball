@@ -27,7 +27,7 @@ function filtrarPersonaje(datos) {
         <div class="CardPersonaje" id="CardPersonaje-${personaje.id}">
             <h2 class="NombrePersonaje">${personaje.name}</h2>
             <img src="${personaje.image}">
-            <p class="InformacionPersonaje">${personaje.race}</p>
+            <h2 class="InformacionPersonaje">${personaje.race}</h2>
 
             <button class="openModal">Ver mas</button>
             <div class="modal"> 
