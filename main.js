@@ -1,41 +1,70 @@
 const URL = "https://dragonball-api.com/api/characters?limit=15";
 
-const Personajes = []
+const Personajes = [];
 
 async function Info() {
+
     try {
+
         const resultado = await fetch(URL);
+
         if (!resultado.ok) {
-            throw new Error("no se encontro api");
+            throw new Error("No se encontro api");
         }
-        const data = await resultado.json()
 
-        Personajes.push(...data.items)
+        const data = await resultado.json();
 
-        filtrarPersonaje(Personajes)
+        Personajes.push(...data.items);
 
-        buscar(Personajes[0])
+        filtrarPersonaje(Personajes);
 
     } catch (error) {
-        console.error("ocurrio un error:", error.menssage);
+
+        console.error("Ocurrio un error:", error.message);
+
     }
 }
-Info()
-
-
 
 function filtrarPersonaje(datos) {
-    const contenidoPersonaje = document.getElementById("TarjetaPersonaje")
+
+    const contenidoPersonaje = document.getElementById("TarjetaPersonaje");
+
+    contenidoPersonaje.innerHTML = "";
+
     datos.forEach(personaje => {
+
         contenidoPersonaje.innerHTML += `
         <div class="CardPersonaje" id="CardPersonaje-${personaje.id}">
-                <h2 class="NombrePersonaje">${personaje.name}</h2>
-                <img src="${personaje.image}">
-                <p class="InformacionPersonaje">${personaje.race}</p>
-        </div>`
+            <h2 class="NombrePersonaje">${personaje.name}</h2>
+
+            <img src="${personaje.image}">
+
+            <p class="InformacionPersonaje">${personaje.race}</p>
+        </div>
+        `;
     });
 }
 
 function buscar(data) {
-    console.log(data.name)
+
+    const InputBuscar = document.getElementById("Buscar");
+
+    const Valorinput = InputBuscar.value.toLowerCase();
+
+    const personajesFiltrados = data.filter(personaje =>
+
+        personaje.name.toLowerCase().includes(Valorinput) ||
+         personaje.race.toLowerCase().includes(Valorinput) 
+
+    );
+
+    filtrarPersonaje(personajesFiltrados);
 }
+
+document.querySelector("#BtnBuscar").addEventListener("click", function () {
+
+    buscar(Personajes);
+
+});
+
+Info();
