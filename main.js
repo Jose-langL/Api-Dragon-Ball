@@ -29,17 +29,14 @@ function filtrarPersonaje(datos) {
             <img src="${personaje.image}">
             <p class="InformacionPersonaje">${personaje.race}</p>
 
-
             <button class="openModal">Ver mas</button>
-            
             <div class="modal"> 
                 <div class="modal-content">
                     <p class="InformacionModal">${personaje.description}</p>
                     <span class="infoki">${personaje.ki}</span>
                     <span class="close">x</span>
                 </div>
-            </div>
-
+            </div> 
         </div>
         `;
     });
