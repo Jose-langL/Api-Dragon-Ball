@@ -45,6 +45,7 @@ function filtrarPersonaje(datos) {
             </div> 
         </div>
         `;
+
     });
 
     const openmodal = document.getElementsByClassName("openModal");
@@ -80,6 +81,18 @@ function buscar(data) {
         personaje.name.toLowerCase().includes(Valorinput) ||
         personaje.race.toLowerCase().includes(Valorinput)
     );
+
+    //mensaje no se encontro personaje
+       if (personajesFiltrados.length === 0) {
+        const contenidoPersonaje = document.getElementById("TarjetaPersonaje");
+        contenidoPersonaje.innerHTML = `
+            <h2 class="mensajeError">
+                No se encontro ningun personaje
+            </h2>
+        `;
+        return;
+        }
+
     filtrarPersonaje(personajesFiltrados);
 }
 
