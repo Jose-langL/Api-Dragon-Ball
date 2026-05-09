@@ -27,14 +27,20 @@ function filtrarPersonaje(datos) {
         <div class="CardPersonaje" id="CardPersonaje-${personaje.id}">
             <h2 class="NombrePersonaje">${personaje.name}</h2>
             <img src="${personaje.image}">
-            <h2 class="InformacionPersonaje">${personaje.race}</h2>
+
 
             <button class="openModal">Ver mas</button>
             <div class="modal"> 
                 <div class="modal-content">
+                    <h1>Descripcion</h1>
                     <p class="InformacionModal">${personaje.description}</p>
-                    <span class="infoki">${personaje.ki}</span>
-                    <span class="close">x</span>
+                    <h4>ki</h4>
+                    <p class="InformacionModal">${personaje.ki}</p>
+                    <h4>Maximo ki</h4>
+                    <p class="InformacionModal">${personaje.maxKi}</p>
+                    <h4>Raza</h4>
+                    <p class="InformacionModal">${personaje.race}</p>
+                    <span class="close">X</span>
                 </div>
             </div> 
         </div>
@@ -81,4 +87,5 @@ document.querySelector("#BtnBuscar").addEventListener("click", function () {
     buscar(Personajes);
 });
 
+console.log(Personajes)
 Info();
