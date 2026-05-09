@@ -17,7 +17,7 @@ body{
     display:grid;
     align-items: center;
     justify-content: center;
-    background-image: url(./Multimedia/Fondo\ Header.png);
+    background-image: url(./Multimedia/fondo2.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -210,4 +210,20 @@ img{
 
 .modal-content::-webkit-scrollbar{
     width: 12px;
+}
+
+.openModal{
+    border: none;
+    text-align: none;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: rgb(122, 122, 252);
+     color: #fffdfdfb;
+     text-shadow:
+        2px 2px 0 #000,
+        -2px 2px 0 #000,
+        2px -2px 0 #000,
+        -2px -2px 0 #000,
+        0px 4px 6px rgba(0,0,0,0.5);
+    font-size: 1rem;
 }

@@ -29,7 +29,7 @@ function filtrarPersonaje(datos) {
             <img src="${personaje.image}">
 
 
-            <button class="openModal">Ver mas</button>
+             <button class="openModal">Ver mas</button>
             <div class="modal"> 
                 <div class="modal-content">
                     <h1>Descripcion</h1>
