@@ -6,6 +6,9 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url(./Multimedia/Fondo\ Body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Contenedor Header */
@@ -14,7 +17,7 @@ body{
     display:grid;
     align-items: center;
     justify-content: center;
-    background-image: url(/Copilot_20260506_084347\ \(2\).png);
+    background-image: url(./Multimedia/Fondo\ Header.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -114,7 +117,7 @@ img{
     margin: 10px;
     position: relative;
     overflow: hidden;
-    background-image: url(./Copilot_20260508_092846.png);
+    background-image: url(./Multimedia/Fondo\ Card\ Personaje.png);
 }
 
     .CardPersonaje h2{
@@ -149,7 +152,7 @@ img{
 } 
 
 .modal-content{
-    background-image: url(./Copilot_20260508_210406.png);
+    background-image: url(./Multimedia/Fondo\ Modal.png);
     width: 90%;
     height: 90%;
     padding: 20px;
