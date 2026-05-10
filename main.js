@@ -73,7 +73,7 @@ function filtrarPersonaje(datos) {
 
 
 //Funcion para activar el buscador y muestre la informacion
-function buscar(data) {
+async function buscar(data) {
     const InputBuscar = document.getElementById("Buscar");
     const Valorinput = InputBuscar.value.toLowerCase();
 
@@ -93,7 +93,7 @@ function buscar(data) {
         return;
         }
 
-    filtrarPersonaje(personajesFiltrados);
+    await filtrarPersonaje(personajesFiltrados);
 }
 
 document.querySelector("#BtnBuscar").addEventListener("click", function () {
